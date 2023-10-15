@@ -92,19 +92,6 @@ binary_sensor:
       mode: INPUT_PULLUP
 
 # Provide a 'cover' entity for display of the garage door
-# cover:
-#   - platform: feedback
-#     name: "Garage Door"
-#     open_action:
-#       - switch.turn_on: gd_relay
-#     open_duration: 12.61s
-#     close_action:
-#       - switch.turn_on: gd_relay
-#     close_duration: 12.61s
-#     close_endstop: gd_closed_sensor
-#     has_built_in_endstop: true
-#     stop_action:
-#       - switch.turn_on: gd_relay
 cover:
   - platform: template
     id: garage_door
