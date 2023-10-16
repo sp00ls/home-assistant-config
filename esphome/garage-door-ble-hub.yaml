@@ -98,7 +98,7 @@ cover:
     name: "Garage Door"
     device_class: garage
     lambda: |-
-      if(!id(gd_closed_sensor).state) {
+      if(id(gd_closed_sensor).state) {
         return COVER_OPEN;
       } else {
         return COVER_CLOSED;
