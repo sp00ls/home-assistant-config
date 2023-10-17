@@ -12,7 +12,7 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@v4
       - name: 'Sync files'
-        uses: pentatonicfunk/action-gist-repo-sync@v1.7
+        uses: sp00ls/action-gist-repo-sync@main
         with:
           gist_token: ${{ secrets.GIST_TOKEN }}
           gist_id: 3754e8459405a990af35c7d4be3583a8
