@@ -15,8 +15,8 @@ jobs:
         uses: pentatonicfunk/action-gist-repo-sync@v1.7
         with:
           gist_token: ${{ secrets.GIST_TOKEN }}
-          gist_id: '3754e8459405a990af35c7d4be3583a8'
-          source_path: 'esphome/'
+          gist_id: 3754e8459405a990af35c7d4be3583a8
+          source_path: esphome
 #jobs:
 #  files-modified:
 #    name: 'Check if files changed'
