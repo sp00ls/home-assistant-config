@@ -6,7 +6,7 @@ on:
 jobs:
   sync-with-gist:
     name: 'Sync ESPHome directory with Gist'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: 'Checkout'
