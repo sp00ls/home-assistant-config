@@ -1,0 +1,59 @@
+esphome:
+  name: upstairs-ble-hub
+  friendly_name: upstairs-ble-hub
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: !secret upstairs_ble_hub_hassio_encryption_key
+
+ota:
+
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "upstairs-ble-hub-fallback"
+    password: !secret captive_portal_password
+
+captive_portal:
+
+esp32_ble_tracker:
+bluetooth_proxy:
+    active: true
+
+output:
+  platform: ledc
+  id: buzzer_output
+  pin: GPIO2
+
+switch:
+  - platform: output 
+    name: "Buzzer"
+    disabled_by_default: true
+    id: buzzer
+    output: buzzer_output
+    on_turn_on: 
+      then:
+        - output.turn_on: buzzer_output
+        - output.ledc.set_frequency:
+            id: buzzer_output
+            frequency: "500Hz"
+        - output.set_level:
+            id: buzzer_output
+            level: "50%"
+
+    on_turn_off:
+      then:
+        - output.turn_off: buzzer_output
