@@ -3,3 +3,4 @@
 *.db*
 **/.HA_VERSION
 **/.storage
+**/.esphome
