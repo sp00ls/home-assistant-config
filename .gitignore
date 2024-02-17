@@ -1,1 +1,5 @@
 **/secrets.yaml
+*.log*
+*.db*
+**/.HA_VERSION
+**/.storage
