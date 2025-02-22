@@ -16,7 +16,8 @@ api:
     key: !secret garage-door-ble-hub_hassio_encryption_key
 
 ota:
-  password: !secret ota_update_password
+  - platform: esphome
+    password: !secret ota_update_password
 
 wifi:
   ssid: !secret wifi_ssid
